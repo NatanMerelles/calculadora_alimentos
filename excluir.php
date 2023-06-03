@@ -1,5 +1,9 @@
 <?php
-$alimento_id = $_GET['alimento_id'];
+require_once("banco.php");
+require_once("model.php");
+delete_alimento($_GET['alimento_id']);
 
-echo 'Alimento: '.$alimento_id.'<br />Excluido com Sucesso!';
+echo 'Alimento excluido com Sucesso!';
+
+header("Location: painel.php");
 ?>

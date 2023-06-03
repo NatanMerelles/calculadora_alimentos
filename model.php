@@ -13,15 +13,15 @@ function search_alimentos($search) {
 	return $sth->fetchAll();
 }
 
-function insert_movel($nome_movel, $descricao, $id_linha, $id_modelo, $id_cor) {
+function insert_alimento($nm_alimento, $caloria, $carboidrato, $proteina, $gordura) {
 	global $conn;
-	$sth = $conn->prepare("insert into moveis (nome, descricao, id_linha, id_modelo) values ('$nome_movel', '$descricao', $id_linha, $id_modelo)");
+	$sth = $conn->prepare("insert into calculadora.alimento (id_usuario, nm_alimento, caloria, carboidrato, proteina, gordura) values (1, '".$nm_alimento."', '".$caloria."','". $carboidrato."', '".$proteina."', '".$gordura."')");
 	$sth->execute();
 }
 
-function excluir_movel($id_movel) {
+function delete_alimento($id_alimento) {
 	global $conn;
-	$sth = $conn->prepare("delete from moveis where id_movel = $id_movel");
+	$sth = $conn->prepare("delete from calculadora.alimento where id_alimento = ".$id_alimento."");
 	$sth->execute();
 }
 

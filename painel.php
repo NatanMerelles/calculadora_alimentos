@@ -55,7 +55,7 @@
 										<td>'.$alimento['id_usuario'].'</td>
 										<td>
 											<a href="editar.php?alimento_id='.$alimento['id_alimento'].'">Editar</a>
-											<a href="excluir.php?alimento_id=">Excluir</a>
+											<a href="excluir.php?alimento_id='.$alimento['id_alimento'].'">Excluir</a>
 										</td>
 									</tr>
 								';
