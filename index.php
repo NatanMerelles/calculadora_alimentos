@@ -15,12 +15,13 @@ require_once("model.php");
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 	
     <header class="header">
 			<div class="container flexible-menu">
-				<h1 class="title">Calculadora</h1>
+				<h1 class="title">Calc.food</h1>
 
 				<ul class="menu">
 					<li class="menu-item">
@@ -35,8 +36,9 @@ require_once("model.php");
 		<main class="content">
 			<div class="container">
 				<div style="margin-bottom: 1rem;">
-					<form action="index.php" method="get">
-						<input type="search" name="search" placeholder="Pesquisar Alimento" tabindex="1" />
+					<form class="search" action="index.php" method="get">
+						<input class="input search-input" type="search" name="search" placeholder="Pesquisar Alimento" tabindex="1" />
+						<button class="btn" type="submit">Buscar</button>
 					</form>
 				</div>
 

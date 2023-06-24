@@ -85,7 +85,19 @@ body {
 	padding: 0.5rem 1rem;
 	color: white;
 	text-decoration: none;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
 }
+
+.menu-item a {
+	text-decoration: none;
+	color: #000;
+}
+
+.menu-item a:visited {
+	color: #000;
+}
+
 .form {
 	display: flex;
 	flex-direction: column;
@@ -102,6 +114,18 @@ body {
 .table {
 	width: 100%;
 	margin-bottom: 3rem;
+
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+}
+
+.table a {
+	text-decoration: none;
+	color: #000;
+}
+
+.table a:visited {
+	color: #000;
 }
 
 .page-title {
@@ -154,6 +178,68 @@ th {
 	}
 }
 
+.btn {
+	border: none;
+	border-radius: 0.2rem;
+    margin: 0;
+    padding: 0.4rem 1rem;
+	font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+	text-transform: uppercase;
 
+    width: auto;
+    overflow: visible;
+    background: #d5d5d5;
+    color: #111111;
+    line-height: normal;
+	cursor: pointer;
+}
 
+.input {
+	border: 1px solid #d5d5d5;
+    background-color: #fff;
+	border-radius: 0.2rem;
+	padding: 0.4rem 1rem;
+	font-family: 'Roboto', sans-serif;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
 
+.label {
+	display: block;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+}
+
+.icon {
+	width: 1rem;
+}
+
+.mr-1 {
+	margin-right: 0.6rem
+}
+
+.mb-1 {
+	margin-bottom: 0.6rem
+}
+
+.mr-2 {
+	margin-right: 1rem
+}
+
+.search {
+	display: flex;
+	gap: 0.5rem;
+}
+
+.search-input {
+	flex: 1;
+}
+.text {
+	font-family: 'Roboto', sans-serif;
+}
+
+.text-danger {
+	color: #ff0000;
+}

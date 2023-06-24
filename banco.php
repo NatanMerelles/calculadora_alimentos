@@ -1,10 +1,10 @@
 <?php
 
-$bd_host = "192.168.20.18";
+$bd_host = getenv("bd_host");
 $sgbd = "pgsql";
-$base_de_dados = "natanmerelles";
-$bd_usuario = "natanmerelles";
-$bd_senha = "123456";
+$base_de_dados = getenv("base_de_dados");
+$bd_usuario = getenv("bd_usuario");
+$bd_senha = getenv("bd_senha");
 
 switch ($sgbd) {
     case "mysql":

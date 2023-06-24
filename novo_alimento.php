@@ -14,7 +14,7 @@
 <body>
     <header class="header">
 			<div class="container flexible-menu">
-				<h1 class="title">Calculadora</h1>
+				<h1 class="title">Calc.food</h1>
 
                 <?php
 					require_once("sessao_opcoes.php");
@@ -30,33 +30,39 @@
 				</h2>
 
                 <form class="form" action="cadastra.php" method="post">
+                    <?php
+                        echo '
+                            <input type="hidden" name="id_usuario" value="'.$_SESSION["usuario"]["id_usuario"].'" />
+                        ';
+                    ?>
+
                     <div class="form-field">
-                        <label>Titulo:</label>
-                        <input type="text" name="nm_alimento" placeholder="Digite o valor" required />
+                        <label class="label">Titulo:</label>
+                        <input class="input" type="text" name="nm_alimento" placeholder="Digite o valor" required />
                     </div>
 
                     <div class="form-field">
-                        <label>Calorias:</label>
-                        <input type="text" name="caloria" placeholder="Digite o valor" required />
+                        <label class="label">Calorias:</label>
+                        <input class="input" type="text" name="caloria" placeholder="Digite o valor" required />
                     </div>
 
                     <div class="form-field">
-                        <label>Carboidratos:</label>
-                        <input type="text" name="carboidrato" placeholder="Digite o valor" required />
+                        <label class="label">Carboidratos:</label>
+                        <input class="input" type="text" name="carboidrato" placeholder="Digite o valor" required />
                     </div>
 
                     <div class="form-field">
-                        <label>Proteinas:</label>
-                        <input type="text" name="proteina" placeholder="Digite o valor" required />
+                        <label class="label">Proteinas:</label>
+                        <input class="input" type="text" name="proteina" placeholder="Digite o valor" required />
                     </div>
 
                     <div class="form-field">
-                        <label>Gorduras:</label>
-                        <input type="text" name="gordura" placeholder="Digite o valor" required />
+                        <label class="label">Gorduras:</label>
+                        <input class="input" type="text" name="gordura" placeholder="Digite o valor" required />
                     </div>
 
                     <div>
-                        <button type="submit">Salvar</button>
+                        <button class="btn" type="submit">Cadastrar</button>
                     </div>
                 </form>
 			</div>  

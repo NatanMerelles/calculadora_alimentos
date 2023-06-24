@@ -19,7 +19,7 @@
 
 <header class="header">
 			<div class="container flexible-menu">
-				<h1 class="title">Calculadora</h1>
+				<h1 class="title">Calc.food</h1>
 
 				<?php
 					require_once("sessao_opcoes.php");
@@ -52,10 +52,14 @@
 									<tr>
 										<td>'.$alimento['nm_alimento'].'</td>
 										<td>'.$alimento['caloria'].'</td>
-										<td>'.$alimento['id_usuario'].'</td>
+										<td>'.$alimento['nm_usuario'].'</td>
 										<td>
-											<a href="editar.php?alimento_id='.$alimento['id_alimento'].'">Editar</a>
-											<a href="excluir.php?alimento_id='.$alimento['id_alimento'].'">Excluir</a>
+											<a class="mr-1" href="editar.php?alimento_id='.$alimento['id_alimento'].'">
+												<img class="icon icon-small" src="pencil.png" />
+											</a>
+											<a href="excluir.php?alimento_id='.$alimento['id_alimento'].'">
+												<img class="icon icon-small" src="trash.png" />
+											</a>
 										</td>
 									</tr>
 								';

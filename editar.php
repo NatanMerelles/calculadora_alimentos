@@ -1,3 +1,9 @@
+<?php
+	require_once("banco.php");
+	require_once("model.php");
+	require_once("sessao_testa_sessao.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +20,7 @@
 <body>
     <header class="header">
 			<div class="container flexible-menu">
-				<h1 class="title">Calculadora</h1>
+				<h1 class="title">Calc.food</h1>
 
                 <?php
 					require_once("sessao_opcoes.php");
@@ -32,35 +38,42 @@
 				    ?>
 				</h2>
 
-                <form class="form">
-                    <div class="form-field">
-                        <label>Titulo:</label>
-                        <input type="text" placeholder="Digite o valor" value="Arroz" />
-                    </div>
+                <form class="form" action="edita.php" method="post">
+                        <?php 
+							$result = search_alimento_by_id($_GET['alimento_id']);
+                            $alimento = $result[0];
 
-                    <div class="form-field">
-                        <label>Calorias:</label>
-                        <input type="text" placeholder="Digite o valor" value="200" />
-                    </div>
+                            echo '
+                                <div class="form-field">
+                                    <label class="label">Titulo:</label>
+                                    <input class="input" type="text" name="nm_alimento" placeholder="Digite o valor" value="'.$alimento["nm_alimento"].'" />
+                                </div>
+            
+                                <div class="form-field">
+                                    <label class="label">Calorias:</label>
+                                    <input class="input" type="text"  name="caloria" placeholder="Digite o valor" value="'.$alimento["caloria"].'" />
+                                </div>
+            
+                                <div class="form-field">
+                                    <label class="label">Carboidratos:</label>
+                                    <input class="input" type="text" name="carboidrato" placeholder="Digite o valor" value="'.$alimento["carboidrato"].'" />
+                                </div>
+            
+                                <div class="form-field">
+                                    <label class="label">Proteinas:</label>
+                                    <input class="input" type="text" name="proteina" placeholder="Digite o valor" value="'.$alimento["proteina"].'" />
+                                </div>
+            
+                                <div class="form-field">
+                                    <label class="label">Gorduras:</label>
+                                    <input class="input" type="text" name="gordura" placeholder="Digite o valor" value="'.$alimento["gordura"].'" />
+                                </div>
 
-                    <div class="form-field">
-                        <label>Carboidratos:</label>
-                        <input type="text" placeholder="Digite o valor" value="20" />
-                    </div>
-
-                    <div class="form-field">
-                        <label>Proteinas:</label>
-                        <input type="text" placeholder="Digite o valor" value="10" />
-                    </div>
-
-
-                    <div class="form-field">
-                        <label>Gorduras:</label>
-                        <input type="text" placeholder="Digite o valor" value="5" />
-                    </div>
-
+                                <input type="hidden" name="id_alimento" value="'.$alimento["id_alimento"].'" />
+                            ';
+						?>
                     <div>
-                        <button type="submit">Salvar</button>
+                        <button class="btn btn-success" type="submit">EDITAR</button>
                     </div>
                 </form>
 			</div>  

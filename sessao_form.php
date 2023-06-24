@@ -12,7 +12,7 @@
 <body>
 <header class="header">
 			<div class="container flexible-menu">
-				<h1 class="title">Calculadora</h1>
+				<h1 class="title">Calc.food</h1>
 
 				<ul class="menu">
 					<li class="menu-item">
@@ -26,12 +26,22 @@
 			<div class="container">
 			<form action="sessao_verifica_login.php" method="POST">
 
-			<label for="nome">Usuário</label><BR>
-			<input type="text" name="usuario" id="usuario"><BR>
-			<label for="nome">Senha</label><BR>
-			<input type="password" name="senha" id="senha"><BR>
-			<input type="submit" value="Enviar">
+			<div class="mb-1">
+				<label class="label"  for="nome">Usuário</label>
+				<input class="input" type="text" name="usuario" id="usuario">
+			</div>
+			<div class="mb-1">
+				<label class="label" for="nome">Senha</label>
+				<input class="input" type="password" name="senha" id="senha">
+			</div>
 
+			<?php
+				if($_GET && $_GET['error']){
+					echo '<p class="text text-danger mb-1">Usuário e/ou senha inválidos<p/>';
+				}
+			?>
+
+			<button type="submit" class="btn">Login</button>
 			</form>
 			</div>  
 		</main>
