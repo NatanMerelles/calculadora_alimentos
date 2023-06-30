@@ -16,6 +16,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
 </head>
 <body>
     <header class="header">
@@ -38,7 +39,7 @@
 				    ?>
 				</h2>
 
-                <form class="form" action="edita.php" method="post">
+                <form class="form" action="edita.php" method="post" enctype="multipart/form-data">
                         <?php 
 							$result = search_alimento_by_id($_GET['alimento_id']);
                             $alimento = $result[0];
@@ -67,6 +68,14 @@
                                 <div class="form-field">
                                     <label class="label">Gorduras:</label>
                                     <input class="input" type="text" name="gordura" placeholder="Digite o valor" value="'.$alimento["gordura"].'" />
+                                </div>
+
+                                <div class="form-field">
+                                    <label class="label">Imagem:</label>
+                                    <input class="input" type="file" name="fileToUpload" placeholder="Insira a imagem" />
+                                    <div class="square square-small">
+                                        <img class="square-content" src="'.$alimento["file_link"].'" />
+                                    </div>
                                 </div>
 
                                 <input type="hidden" name="id_alimento" value="'.$alimento["id_alimento"].'" />

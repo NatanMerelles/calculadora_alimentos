@@ -1,9 +1,15 @@
 <?php
 require_once("banco.php");
 require_once("model.php");
-var_dump($_POST);
+require_once("helpers.php");
 
-edita_alimento($_POST['id_alimento'], $_POST['nm_alimento'], $_POST['caloria'], $_POST['carboidrato'], $_POST['proteina'], $_POST['gordura']);
+$file = "";
+
+if($_FILES["fileToUpload"]["name"]){
+    $file = upload_file($_FILES["fileToUpload"], $_POST['id_alimento']);
+}
+
+edita_alimento($_POST['id_alimento'], $_POST['nm_alimento'], $_POST['caloria'], $_POST['carboidrato'], $_POST['proteina'], $_POST['gordura'], $file);
 
 echo 'Alimento editado com Sucesso!';
 

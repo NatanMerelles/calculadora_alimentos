@@ -10,6 +10,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
 </head>
 <body>
     <header class="header">
@@ -29,7 +30,7 @@
 					Cadastro de Alimento:
 				</h2>
 
-                <form class="form" action="cadastra.php" method="post">
+                <form class="form" action="cadastra.php" method="post" enctype="multipart/form-data">
                     <?php
                         echo '
                             <input type="hidden" name="id_usuario" value="'.$_SESSION["usuario"]["id_usuario"].'" />
@@ -59,6 +60,11 @@
                     <div class="form-field">
                         <label class="label">Gorduras:</label>
                         <input class="input" type="text" name="gordura" placeholder="Digite o valor" required />
+                    </div>
+
+                    <div class="form-field">
+                        <label class="label">Imagem:</label>
+                        <input class="input" type="file" name="fileToUpload" placeholder="Insira a imagem" required />
                     </div>
 
                     <div>

@@ -16,6 +16,7 @@ require_once("model.php");
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+	<link rel="icon" type="image/x-icon" href="favicon.png">
 </head>
 <body>
 	
@@ -55,7 +56,20 @@ require_once("model.php");
 
 						foreach ($alimentos as $alimento){
 							echo '
-								<h2 class="page-title page-title-sm">'.$alimento['nm_alimento'].'</h2>
+								<div class="list">
+									<div class="list-item">
+										<h2 class="page-title page-title-sm">'.$alimento['nm_alimento'].'</h2>
+										<h3 class="page-subtitle page-subtitle-sm">'.$alimento['descricao'].'</h3>
+									</div>
+									<div class="">
+										<div class="square square-medium">
+											<img class="square-content" src="'.$alimento["file_link"].'" />
+										</div>
+									</div>
+								</div>
+								<div class="mb-1">
+									
+								</div>
 								<table class="table">
 									<thead>
 										<tr>

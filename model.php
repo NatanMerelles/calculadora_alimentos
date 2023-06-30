@@ -43,19 +43,29 @@ function insert_alimento($id_usuario, $nm_alimento, $caloria, $carboidrato, $pro
 	)
 	");
 	$sth->execute();
+	return $conn->lastInsertId();
 }
 
-function edita_alimento($id_alimento, $nm_alimento, $caloria, $carboidrato, $proteina, $gordura) {
+function edita_alimento($id_alimento, $nm_alimento, $caloria, $carboidrato, $proteina, $gordura, $file) {
 	global $conn;
-	$sth = $conn->prepare("
-	update 
-		calculadora.alimento
-	set 
+
+	$set = "
 		nm_alimento = '".$nm_alimento."',
 		caloria = '".$caloria."',
 		carboidrato = '".$carboidrato."',
 		proteina = '".$proteina."',
 		gordura = '".$gordura."'
+	";
+
+	if($file){
+		$set = $set.",file_link = '".$file."'";
+	}
+
+	$sth = $conn->prepare("
+	update 
+		calculadora.alimento
+	set 
+		".$set."
 	where
 		id_alimento = ".$id_alimento."
 	  ");

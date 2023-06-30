@@ -141,6 +141,19 @@ body {
 	margin-bottom: 2rem;
 }
 
+.page-subtitle {
+	display: block;
+	font-size: 1.2rem;
+	font-weight: 400;
+	font-family: 'Roboto', sans-serif;
+	margin-bottom: 2rem;
+}
+
+.page-subtitle-sm {
+	font-size: 0.8rem;
+	margin-bottom: 2rem;
+}
+
 th {
 	text-align: left;
 	font-weight: 600;
@@ -242,4 +255,41 @@ th {
 
 .text-danger {
 	color: #ff0000;
+}
+
+.square {
+	position: relative;
+	width: 50%;
+}
+
+.square-small {
+	width: 120px;
+}
+
+.square-medium {
+	width: 240px;
+}
+  
+.square:after {
+	content: "";
+	display: block;
+	padding-bottom: 100%;
+}
+  
+.square-content {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.list {
+	display: flex;
+}
+
+.list-item {
+	flex: 1;
+}
+
+.list-item_right {
 }
